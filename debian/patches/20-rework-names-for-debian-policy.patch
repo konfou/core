@@ -1,0 +1,62 @@
+--- a/core/CMakeLists.txt
++++ b/core/CMakeLists.txt
+@@ -18,6 +18,9 @@
+ set(libtsdll_SRCS
+     tsdll.c)
+ 
++set(jconsole_LIBS
++    j7)
++
+ if(NOT DATA_INSTALL_PREFIX)
+     if(UNIX)
+         set(DATA_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}/share/j")
+@@ -55,26 +58,31 @@
+     add_definitions("-DREADLINE")
+ endif()
+ 
+-add_library(j SHARED ${libj_SRCS})
+-set_target_properties(j PROPERTIES COMPILE_FLAGS "-fPIC -O3 -fno-strict-aliasing")
+-target_link_libraries(j m)
+-target_link_libraries(j dl
++add_library(j7 SHARED ${libj_SRCS})
++set_target_properties(j7 PROPERTIES COMPILE_FLAGS "-fPIC -O3 -fno-strict-aliasing")
++target_link_libraries(j7 m)
++target_link_libraries(j7 dl)
+ 
+ add_library(tsdll SHARED ${libtsdll_SRCS})
+ set_target_properties(tsdll PROPERTIES COMPILE_FLAGS "-fPIC -O3 -fno-strict-aliasing")
+ 
+ add_executable(jconsole ${jconsole_SRCS})
+ target_link_libraries(jconsole ${jconsole_LIBS})
+-
+-install(TARGETS j
++set_target_properties(jconsole PROPERTIES OUTPUT_NAME j7)
++set_target_properties(j7 PROPERTIES VERSION 1.0.1 SOVERSION 1)
++install(TARGETS j7
+         LIBRARY DESTINATION lib)
+ 
+ install(TARGETS tsdll
+-        LIBRARY DESTINATION lib)
++        LIBRARY DESTINATION lib/j7)
+ 
+ install(TARGETS jconsole
+         RUNTIME DESTINATION bin)
+ 
++file(GLOB headers "*.h")
++install(FILES ${headers} 
++        DESTINATION include)
++
+ file(GLOB j_SYSTEM
+      "j/system/*")
+ 
+--- a/core/jeload.c
++++ b/core/jeload.c
+@@ -27,7 +27,7 @@
+  #ifdef __MACH__ 
+   #define JDLLNAME "libj.dylib"
+  #else
+-  #define JDLLNAME "libj.so"
++  #define JDLLNAME "libj7.so.1"
+  #endif
+ #endif
+ #include "j.h"

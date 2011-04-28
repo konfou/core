@@ -1,0 +1,19 @@
+J was packaged for Debian by Don Barry <don@donbarry.org> 
+
+It was downloaded from:
+    http://jsoftware.com/download/j701_b_source.tar.gz
+
+The upstream author is http://Jsoftware.com
+
+Copyright (C) 2011 Jsoftware.com 
+
+License: GPLv3 or later
+(see /usr/share/common-licenses-GPL-3)
+
+The Debian packaging is copyright (C) 2011 Don Barry <don@donbarry.org>
+and is licensed under the GPL version 3 or later versions, 
+at the discretion of the user, see "/usr/share/common-licenses/GPL-3".
+
+It also contains the file vrand.c which contains a routine 
+copyright Takuji Nishimura and Makoto Matsumoto Copyright (c) 1997-2002
+under a three-clause BSD-like license included in the code.

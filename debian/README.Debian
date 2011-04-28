@@ -1,0 +1,7 @@
+J for Debian
+-----------------------
+
+This packaging of the J language version 7 was prepared
+for Debian using the cdbs packaging system.  
+
+ -- Don Barry <don@donbarry.org>  Sat, 23 Apr 2011 01:53:57 -0400
