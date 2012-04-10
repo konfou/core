@@ -1,6 +1,17 @@
---- a/core/CMakeLists.txt
-+++ b/core/CMakeLists.txt
-@@ -18,6 +18,9 @@
+From: Don Barry <don@donbarry.org>
+Date: Thu, 28 Apr 2011 06:37:00 +0100
+Subject: rework names for debian policy
+
+---
+ CMakeLists.txt |   22 +++++++++++++++-------
+ jeload.c       |    2 +-
+ 2 files changed, 16 insertions(+), 8 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index a8177a6..53073e4 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -18,6 +18,9 @@ set(jconsole_SRCS
  set(libtsdll_SRCS
      tsdll.c)
  
@@ -10,7 +21,7 @@
  if(NOT DATA_INSTALL_PREFIX)
      if(UNIX)
          set(DATA_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}/share/j")
-@@ -55,26 +58,31 @@
+@@ -55,26 +58,31 @@ if(HAVE_READLINE)
      add_definitions("-DREADLINE")
  endif()
  
@@ -43,14 +54,16 @@
          RUNTIME DESTINATION bin)
  
 +file(GLOB headers "*.h")
-+install(FILES ${headers} 
++install(FILES ${headers}
 +        DESTINATION include)
 +
  file(GLOB j_SYSTEM
       "j/system/*")
  
---- a/core/jeload.c
-+++ b/core/jeload.c
+diff --git a/jeload.c b/jeload.c
+index f93dbe9..2472504 100644
+--- a/jeload.c
++++ b/jeload.c
 @@ -27,7 +27,7 @@
   #ifdef __MACH__ 
    #define JDLLNAME "libj.dylib"

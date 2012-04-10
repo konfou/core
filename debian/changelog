@@ -1,15 +1,5 @@
-j7 (7.0.1-20110331-1.0) unstable; urgency=low
-
-  * Non-maintainer upload
-  * Fixed version to reflect J tradition 
-  * Changed package name to j
-  * Changed jconsole binary to j
-
- -- Don Barry <don@isc.astro.cornell.edu>  Sat, 23 Apr 2011 22:13:20 -0400
-
-jconsole (0.1-20110331-1) unstable; urgency=low
+jlanguage-core (7.01.2011.02.23.15.25-1) unstable; urgency=low
 
   * Initial release.
-  * Non-maintainer upload 
-
- -- Don Barry <don@donbarry.org>  Sat, 23 Apr 2011 01:53:57 -0400
+  
+ -- Barak A. Pearlmutter <bap@debian.org>  Tue, 10 Apr 2012 09:17:20 +0100

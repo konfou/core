@@ -1,20 +1,21 @@
-Source: j7
+Source: jlanguage-core
 Section: interpreters
-Priority: extra
-Maintainer: Don Barry <don@donbarry.org>
-Build-Depends: cdbs, debhelper (>= 7.0.50~), quilt, libreadline5-dev
-Standards-Version: 3.9.1
+Priority: optional
+Maintainer: Barak A. Pearlmutter <bap@debian.org>
+Uploaders: Don Barry <don@donbarry.org>
+Build-Depends: debhelper (>= 9), libreadline-dev
+Standards-Version: 3.9.3
 Homepage: http://jsoftware.com
-Vcs-Git: git://github.com/openj/core
-Vcs-Browser: https://github.com/openj/core
+Vcs-Git: git://git.debian.org/git/collab-maint/jlanguage-core.git
+Vcs-Browser: http://git.debian.org/?p=collab-maint/jlanguage-core.git
 
-Package: j7
+Package: jlanguage-core
 Architecture: any
-Depends: libj7-1, ${shlibs:Depends}, ${misc:Depends}, libreadline5
-Description: The J interpretive array language command line tool
+Depends: libj7-1, ${shlibs:Depends}, ${misc:Depends}
+Description: J Language interpretive array language command line tool
  j7 is an implementation of the J language as defined by 
- Kenneth Iverson and implemented by Roger Hui at jsoftware.com
- The j7 command line tool is used for scripting.
+ Kenneth Iverson and implemented by Roger Hui at jsoftware.com.
+ The j7-console command line tool is used for scripting.
 
 Package: libj7-1
 Architecture: any
@@ -23,13 +24,13 @@ Recommends: j7
 Description: The J interpretive array language library
  The j7 library implements the J language as defined by
  Kenneth Iverson and implemented by Roger Jui at jsoftware.com.
- The j7 command line tool is simply a text front-end to it.
+ The jlanguage-console command line tool is simply a text front-end to it.
 
 Package: libj7-dev
 Section: libdevel
 Architecture: any
 Depends: ${misc:Depends}, libj7-1 (= ${binary:Version})
 Description: Headers for libj7
- Headers for libj7.  These are not needed to use j7, but are needed
- to write other tools to interoperate with the J interpreter as 
+ Headers for libj7.  These are not needed to use the J language, but are needed
+ to write other tools to interoperate with the J language interpreter as 
  implemented in the libj7 library.
