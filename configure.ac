@@ -1,12 +1,13 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
-AC_INIT([J], [7.0.1], [programming@jsoftware.com])
+AC_INIT([J],[7.0.1],[programming@jsoftware.com])
 AC_CANONICAL_TARGET
+AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_SRCDIR([jconsole.c])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([foreign])
-AC_PROG_LIBTOOL
+LT_INIT
 
 # Check for CPU-specific features
 case $target_cpu in
