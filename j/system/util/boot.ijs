@@ -74,6 +74,10 @@ load__ >{. p }. jsx {. ARGV
 if. jsx<#ARGV do.
   ARGVVERB_z_=: 3 : ((>:jsx)}.ARGV) NB. define in z
   ARGVVERB__'' NB. run in base
+elseif. ({.ARGV) = <'gtkide',IFWIN#'.exe' do.
+  load__'gtkide'
+elseif. (}.@(}.~ i:&(IFWIN{'/\')) &.> {.ARGV) = <'gtkide',IFWIN#'.exe' do.
+  load__'gtkide'
 end.
 
 EMPTY
