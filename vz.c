@@ -92,7 +92,7 @@ ZF2(jtzrem){D a,b,d;Z q;
  R zminus(v,ztymes(u,q));
 }
 
-ZF2(jtzgcd){D a,b;Z t,z;
+ZF2(jtzgcd){D a,b,d;Z q,t,z;
  ZASSERT(!(ZINF(u)||ZINF(v)),EVNAN);
  while(ZNZ(u)){t=zrem(u,v); v.re=u.re; v.im=u.im; u.re=t.re; u.im=t.im;}
  z.re=a=v.re; z.im=b=v.im;
